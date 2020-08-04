@@ -2,7 +2,7 @@
   <div>
     <!-- v-bind:key กำหนด key ให้ loop element เหมือน react -->
     <!-- v-for ใช้ loop array ของ object todoObj -->
-    <div v-bind:key='todo.id' v-for='todo in todoObj'>
+    <div v-for='todo in todoObj' v-bind:key='todo.id'>
       <!-- <h3>{{todo.title}}</h3> -->
       <TodoItem v-bind:todo='todo' v-on:del-todo='$emit("del-todo", todo.id)' />
     </div>
@@ -19,6 +19,8 @@ export default {
   },
   props: ['todoObj']
 }
+
+
 </script>
 
 <style scoped>
